@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Pastelería 1000 Sabores - 50 años de tradición dulce en Chile. Tortas personalizadas, postres artesanales y productos de repostería de alta calidad.">
+    <meta name="keywords" content="pastelería, tortas, postres, Chile, repostería, dulces">
+    <title>Pastelería 1000 Sabores - 50 años de tradición dulce</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="flex-between flex-wrap">
+                <div>
+                    <a href="#inicio" class="logo-combined">
+                        <img src="logo.png" alt="Logo Pastelería 1000 Sabores" class="logo-image" width="90"
+                            height="60">
+                        <span class="logo">Pastelería 1000 Sabores</span>
+                    </a>
+                    <p class="texto-secundario">50 años endulzando Chile</p>
+                </div>
+
+
+                <nav role="navigation" aria-label="Menú principal">
+                    <ul>
+                        <li><a href="#inicio" class="activo">Inicio</a></li>
+                        <li><a href="#catalogo">Catálogo</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+
+
+                <div class="user-actions flex">
+                    <button id="login-btn" class="btn btn-secondary" aria-label="Iniciar sesión">
+                        Iniciar sesión
+                    </button>
+                    <button id="cart-btn" class="btn btn-primary" aria-label="Ver carrito">
+                        🛒 Carrito (<span id="cart-count">0</span>)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección Hero de Aniversario -->
+        <section id="inicio" class="hero-section fade-in">
+            <div class="container text-center">
+                <article class="hero-content">
+                    <h1>¡Celebra con nosotros 50 años de dulces momentos!</h1>
+                    <p class="hero-subtitle">Desde 1974 creando los sabores más deliciosos de Chile. Descubre nuestras
+                        exquisiteces y recibe descuentos especiales por nuestro aniversario.</p>
+
+                    <!-- Video embebido como requiere la evaluación -->
+                    <div class="video-container mb-lg">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                            title="Historia de Pastelería 1000 Sabores" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <a href="#catalogo" class="btn btn-primary bounce">Ver catálogo completo</a>
+                        <a href="#promociones" class="btn btn-outline">Ver promociones</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Promociones de Aniversario -->
+        <section id="promociones" class="promotions-section">
+            <div class="container">
+                <h2 class="text-center mb-lg">Promociones especiales de aniversario</h2>
+                <div class="grid grid-3">
+                    <article class="promo-card">
+                        <div class="promo-icon">🎂</div>
+                        <h3>50% OFF para +50 años</h3>
+                        <p>Usuarios mayores de 50 años reciben un <strong>50% de descuento</strong> en todos nuestros
+                            productos. ¡Celebra la experiencia!</p>
+                        <button class="btn btn-secondary">Registrarse ahora</button>
+                    </article>
+
+                    <article class="promo-card">
+                        <div class="promo-icon">🎁</div>
+                        <h3>Descuento permanente</h3>
+                        <p>Usa el código <strong class="codigo-promo">FELICES50</strong> al registrarte y obtén un
+                            <strong>10% de descuento</strong> de por vida.</p>
+                        <button class="btn btn-secondary" onclick="copyPromoCode()">Copiar código</button>
+                    </article>
+
+                    <article class="promo-card">
+                        <div class="promo-icon">🍰</div>
+                        <h3>Torta gratis - Estudiantes Duoc</h3>
+                        <p>Estudiantes de Duoc UC reciben una <strong>torta gratis</strong> en su cumpleaños. Solo
+                            regístrate con tu correo institucional.</p>
+                        <button class="btn btn-secondary">Registrarse con @duoc.cl</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catálogo de Productos -->
+        <section id="catalogo" class="catalog-section">
+            <div class="container">
+                <h2 class="text-center mb-md">Nuestro delicioso catálogo</h2>
+                <p class="text-center texto-secundario mb-lg">Descubre más de 50 sabores únicos, desde nuestras recetas
+                    tradicionales hasta las creaciones más innovadoras</p>
+
+                <!-- Filtros de productos -->
+                <nav class="filters mb-lg" role="tablist" aria-label="Filtros de productos">
+                    <button class="filter-btn active" data-filter="todos" role="tab" aria-selected="true">Todos los
+                        productos</button>
+                    <button class="filter-btn" data-filter="tortas-cuadradas" role="tab">Tortas Cuadradas</button>
+                    <button class="filter-btn" data-filter="tortas-circulares" role="tab">Tortas Circulares</button>
+                    <button class="filter-btn" data-filter="postres-individuales" role="tab">Postres
+                        Individuales</button>
+                    <button class="filter-btn" data-filter="sin-azucar" role="tab">Sin Azúcar</button>
+                    <button class="filter-btn" data-filter="sin-gluten" role="tab">Sin Gluten</button>
+                    <button class="filter-btn" data-filter="vegana" role="tab">Vegana</button>
+                </nav>
+
+                <!-- Grid de productos -->
+                <div class="products-grid grid grid-3" id="productos-container">
+                    <article class="producto-card" data-category="tortas-cuadradas" data-product="TC001">
+                        <img src="tortarica.jpg" alt="Torta Cuadrada de Chocolate" class="producto-imagen"
+                            loading="lazy">
+                        <div class="producto-contenido">
+                            <span class="producto-categoria">Tortas Cuadradas</span>
+                            <h3 class="producto-titulo">Torta Cuadrada de Chocolate</h3>
+                            <p class="producto-descripcion">Deliciosa torta de chocolate con capas de ganache y un toque
+                                de avellanas. Personalizable con mensajes especiales.</p>
+                            <div class="producto-precio">$45.000 CLP</div>
+                            <button class="btn btn-primary add-to-cart" data-product-id="TC001"
+                                data-product-name="Torta Cuadrada de Chocolate" data-product-price="45000">
+                                Añadir al carrito
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-category="tortas-circulares" data-product="TT001">
+                        <img src="Vainilla.jpg" alt="Torta Circular de Vainilla" class="producto-imagen"
+                            loading="lazy">
+                        <div class="producto-contenido">
+                            <span class="producto-categoria">Tortas Circulares</span>
+                            <h3 class="producto-titulo">Torta Circular de Vainilla</h3>
+                            <p class="producto-descripcion">Bizcocho de vainilla clásico relleno con crema pastelera y
+                                cubierto con un glaseado dulce, perfecto para cualquier ocasión.</p>
+                            <div class="producto-precio">$40.000 CLP</div>
+                            <button class="btn btn-primary add-to-cart" data-product-id="TT001"
+                                data-product-name="Torta Circular de Vainilla" data-product-price="40000">
+                                Añadir al carrito
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-category="postres-individuales" data-product="PI001">
+                        <img src="mousse.jpg" alt="Mousse de Chocolate" class="producto-imagen" loading="lazy">
+                        <div class="producto-contenido">
+                            <span class="producto-categoria">Postres Individuales</span>
+                            <h3 class="producto-titulo">Mousse de Chocolate</h3>
+                            <p class="producto-descripcion">Postre individual cremoso y suave, hecho con chocolate de
+                                alta calidad, ideal para los amantes del chocolate.</p>
+                            <div class="producto-precio">$5.000 CLP</div>
+                            <button class="btn btn-primary add-to-cart" data-product-id="PI001"
+                                data-product-name="Mousse de Chocolate" data-product-price="5000">
+                                Añadir al carrito
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-category="sin-azucar" data-product="PSA001">
+                        <img src="torta-naranja-sin-azucar.jpg" alt="Torta Sin Azúcar de Naranja"
+                            class="producto-imagen" loading="lazy">
+                        <div class="producto-contenido">
+                            <span class="producto-categoria">Sin Azúcar</span>
+                            <h3 class="producto-titulo">Torta Sin Azúcar de Naranja</h3>
+                            <p class="producto-descripcion">Torta ligera y deliciosa, endulzada naturalmente, ideal para
+                                quienes buscan opciones más saludables.</p>
+                            <div class="producto-precio">$48.000 CLP</div>
+                            <button class="btn btn-primary add-to-cart" data-product-id="PSA001"
+                                data-product-name="Torta Sin Azúcar de Naranja" data-product-price="48000">
+                                Añadir al carrito
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-category="sin-gluten" data-product="PG001">
+                        <img src="brownie-sin-gluten.jpg" alt="Brownie Sin Gluten" class="producto-imagen"
+                            loading="lazy">
+                        <div class="producto-contenido">
+                            <span class="producto-categoria">Sin Gluten</span>
+                            <h3 class="producto-titulo">Brownie Sin Gluten</h3>
+                            <p class="producto-descripcion">Rico y denso, este brownie es perfecto para quienes
+                                necesitan evitar el gluten sin sacrificar el sabor.</p>
+                            <div class="producto-precio">$4.000 CLP</div>
+                            <button class="btn btn-primary add-to-cart" data-product-id="PG001"
+                                data-product-name="Brownie Sin Gluten" data-product-price="4000">
+                                Añadir al carrito
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="producto-card" data-category="vegana" data-product="PV001">
+                        <img src="torta-vegana-chocolate.jpg" alt="Torta Vegana de Chocolate"
+                            class="producto-imagen" loading="lazy">
+                        <div class="producto-contenido">
+                            <span class="producto-categoria">Vegana</span>
+                            <h3 class="producto-titulo">Torta Vegana de Chocolate</h3>
+                            <p class="producto-descripcion">Torta de chocolate húmeda y deliciosa, hecha sin productos
+                                de origen animal, perfecta para veganos.</p>
+                            <div class="producto-precio">$50.000 CLP</div>
+                            <button class="btn btn-primary add-to-cart" data-product-id="PV001"
+                                data-product-name="Torta Vegana de Chocolate" data-product-price="50000">
+                                Añadir al carrito
+                            </button>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="text-center mt-lg">
+                    <a href="pages/catalogo.html" class="btn btn-outline">Ver catálogo completo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulario de Registro -->
+        <section id="registro" class="registration-section">
+            <div class="container">
+                <div class="grid grid-2">
+                    <div class="form-info">
+                        <h2>Únete a nuestra familia dulce</h2>
+                        <p>Regístrate y disfruta de beneficios exclusivos, promociones especiales y descuentos únicos en
+                            todos nuestros productos.</p>
+
+                        <div class="benefits-list">
+                            <div class="benefit-item">
+                                <span class="benefit-icon">✨</span>
+                                <div>
+                                    <h4>Descuentos exclusivos</h4>
+                                    <p>Accede a ofertas especiales solo para miembros</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="benefit-icon">🎂</span>
+                                <div>
+                                    <h4>Sorpresa de cumpleaños</h4>
+                                    <p>Recibe un regalo especial en tu día</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="benefit-icon">🚀</span>
+                                <div>
+                                    <h4>Acceso anticipado</h4>
+                                    <p>Sé el primero en conocer nuestros nuevos productos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-container">
+                        <form id="register-form" class="registration-form" novalidate>
+                            <div class="form-group">
+                                <label for="nombre" class="form-label">Nombre completo *</label>
+                                <input type="text" id="nombre" name="nombre" class="form-control" required
+                                    autocomplete="name" aria-describedby="nombre-error">
+                                <div class="form-error" id="nombre-error">Por favor ingresa tu nombre completo</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">Correo electrónico *</label>
+                                <input type="email" id="email" name="email" class="form-control" required
+                                    autocomplete="email" aria-describedby="email-error email-help">
+                                <small id="email-help" class="form-help">Usa tu correo @duoc.cl para beneficios
+                                    estudiantiles</small>
+                                <div class="form-error" id="email-error">Por favor ingresa un correo electrónico válido
+                                </div>
+                                <div class="form-success" id="email-success">¡Correo válido!</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fechaNacimiento" class="form-label">Fecha de nacimiento *</label>
+                                <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="form-control"
+                                    required max="2010-01-01" aria-describedby="fecha-error fecha-help">
+                                <small id="fecha-help" class="form-help">Usuarios +50 años obtienen 50% de
+                                    descuento</small>
+                                <div class="form-error" id="fecha-error">Por favor selecciona tu fecha de nacimiento
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password" class="form-label">Contraseña *</label>
+                                <input type="password" id="password" name="password" class="form-control" required
+                                    minlength="6" autocomplete="new-password"
+                                    aria-describedby="password-error password-help">
+                                <small id="password-help" class="form-help">Mínimo 6 caracteres</small>
+                                <div class="form-error" id="password-error">La contraseña debe tener al menos 6
+                                    caracteres</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="confirmPassword" class="form-label">Confirmar contraseña *</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" class="form-control"
+                                    required autocomplete="new-password" aria-describedby="confirm-password-error">
+                                <div class="form-error" id="confirm-password-error">Las contraseñas no coinciden</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="codigoPromocional" class="form-label">Código promocional (opcional)</label>
+                                <input type="text" id="codigoPromocional" name="codigoPromocional" class="form-control"
+                                    placeholder="Ej: FELICES50" autocomplete="off" aria-describedby="codigo-help">
+                                <small id="codigo-help" class="form-help">Ingresa FELICES50 para 10% de descuento
+                                    permanente</small>
+                                <div class="form-success" id="codigo-success">¡Código válido aplicado!</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="terminos" name="terminos" required>
+                                    <span class="checkmark"></span>
+                                    Acepto los <a href="#" target="_blank">términos y condiciones</a> y la <a href="#"
+                                        target="_blank">política de privacidad</a>
+                                </label>
+                                <div class="form-error" id="terminos-error">Debes aceptar los términos y condiciones
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" id="submit-btn">
+                                <span class="btn-text">Registrarse</span>
+                                <span class="btn-loading hidden">Registrando...</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Blog/Noticias -->
+        <section id="blog" class="blog-section">
+            <div class="container">
+                <h2 class="text-center mb-md">Blog y noticias</h2>
+                <p class="text-center texto-secundario mb-lg">Descubre recetas, consejos de repostería y las últimas
+                    noticias de nuestra pastelería</p>
+
+                <div class="grid grid-3">
+                    <article class="blog-card">
+
+                        <div class="blog-content">
+                            <span class="blog-category">Recetas</span>
+                            <h3>Las mejores recetas de nuestros estudiantes Duoc</h3>
+                            <p class="blog-excerpt">Conoce las creaciones más innovadoras de los futuros chefs de
+                                gastronomía...</p>
+                            <a href="#" class="blog-link">Leer más</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+
+                        <div class="blog-content">
+                            <span class="blog-category">Consejos</span>
+                            <h3>5 secretos para una torta perfecta</h3>
+                            <p class="blog-excerpt">Aprende los trucos que utilizan nuestros maestros pasteleros con 50
+                                años de experiencia...</p>
+                            <a href="#" class="blog-link">Leer más</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="blog-content">
+                            <span class="blog-category">Historia</span>
+                            <h3>Nuestra participación en el récord Guinness</h3>
+                            <p class="blog-excerpt">Revive el momento histórico de 1995 cuando ayudamos a crear la torta
+                                más grande del mundo...</p>
+                            <a href="#" class="blog-link">Leer más</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Nosotros -->
+        <section id="nosotros" class="about-section">
+            <div class="container">
+                <div class="grid grid-2">
+                    <div class="about-text">
+                        <h2>Nuestra historia de 50 años</h2>
+                        <p>Pastelería 1000 Sabores celebra medio siglo como referente indiscutible en la repostería
+                            chilena. Desde 1974, hemos estado comprometidos con la excelencia, la tradición y la
+                            innovación constante.</p>
+
+                        <p>Nuestro momento más memorable llegó en 1995, cuando tuvimos el honor de participar en un
+                            récord Guinness, colaborando en la creación de la torta más grande del mundo. Este hito no
+                            solo nos posicionó internacionalmente, sino que reafirmó nuestro compromiso con la calidad
+                            excepcional.</p>
+
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number">50</div>
+                                <div class="stat-label">Años de experiencia</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">1000+</div>
+                                <div class="stat-label">Sabores únicos</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">500k+</div>
+                                <div class="stat-label">Clientes felices</div>
+                            </div>
+                        </div>
+
+                        <h3>Nuestra misión</h3>
+                        <p>Ofrecer una experiencia dulce y memorable a nuestros clientes, proporcionando tortas y
+                            productos de repostería de alta calidad para todas las ocasiones, mientras celebramos
+                            nuestras raíces históricas y fomentamos la creatividad en la repostería.</p>
+
+                        <h3>Nuestra visión</h3>
+                        <p>Convertirnos en la tienda online líder de productos de repostería en Chile, conocida por
+                            nuestra innovación, calidad y el impacto positivo en la comunidad, especialmente en la
+                            formación de nuevos talentos en gastronomía.</p>
+                    </div>
+
+                    <div class="about-image">
+                        <img src="historia-pasteleria.PNG" alt="50 años de historia - Pastelería 1000 Sabores"
+                            loading="lazy">
+                        <div class="about-badge">
+                            <span class="badge-number">50</span>
+                            <span class="badge-text">Años de tradición</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="contact-section">
+            <div class="container">
+                <h2 class="text-center mb-lg">Contáctanos</h2>
+
+                <div class="grid grid-2">
+                    <div class="contact-info">
+                        <h3>Información de contacto</h3>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div>
+                                <h4>Dirección</h4>
+                                <p>Av. Dulce 123, Providencia<br>Santiago, Chile</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <div>
+                                <h4>Teléfono</h4>
+                                <p><a href="tel:+56223456789">+56 2 2345 6789</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@1000sabores.cl">info@1000sabores.cl</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="contact-icon">🕒</span>
+                            <div>
+                                <h4>Horarios de atención</h4>
+                                <p>Lunes a Viernes: 8:00 - 20:00<br>Sábados: 9:00 - 18:00<br>Domingos: 10:00 - 16:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <form id="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="contactNombre" class="form-label">Nombre *</label>
+                                <input type="text" id="contactNombre" name="contactNombre" class="form-control"
+                                    required>
+                                <div class="form-error" id="contactNombre-error">Por favor ingresa tu nombre</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactEmail" class="form-label">Email *</label>
+                                <input type="email" id="contactEmail" name="contactEmail" class="form-control" required>
+                                <div class="form-error" id="contactEmail-error">Por favor ingresa un email válido</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactAsunto" class="form-label">Asunto *</label>
+                                <select id="contactAsunto" name="contactAsunto" class="form-control" required>
+                                    <option value="">Selecciona un asunto</option>
+                                    <option value="consulta">Consulta general</option>
+                                    <option value="pedido">Pedido personalizado</option>
+                                    <option value="reclamo">Reclamo</option>
+                                    <option value="sugerencia">Sugerencia</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                                <div class="form-error" id="contactAsunto-error">Por favor selecciona un asunto</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactMensaje" class="form-label">Mensaje *</label>
+                                <textarea id="contactMensaje" name="contactMensaje" class="form-control" rows="5"
+                                    required placeholder="Escribe tu mensaje aquí..."></textarea>
+                                <div class="form-error" id="contactMensaje-error">Por favor escribe tu mensaje</div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Pastelería 1000 Sabores</h3>
+                    <p>50 años endulzando Chile con tradición, calidad e innovación.</p>
+                    <div class="social-icons mt-md">
+                        <a href="https://facebook.com/1000sabores" target="_blank" rel="noopener" aria-label="Facebook">
+                            <span>📘</span>
+                        </a>
+                        <a href="https://instagram.com/1000sabores" target="_blank" rel="noopener" </footer>
+
+                            <script src="function.js"></script>
+                            <script src="Conect.js"></script>
+                            <script src="carrito.js"></script>
+                            <script src="filtro.js"></script>
+</body>
+
+</html>
