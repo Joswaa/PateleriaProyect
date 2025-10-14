@@ -14,17 +14,17 @@ beforeEach(()=>{
 describe('Product component', ()=>{
     const mockProduct = {
         code: "1",
-        image: "http://example.com/image1.png",
-        name: "Oso patriarcal",
-        description: "Un oso machista y opresor",
-        price: "15990"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThsT3Jkn-ftLZapdkjBdTGoZRSmI6TyQUubA&s",
+        name: "Chocotorta cuadrada de chocolate",
+        description: "Deliciosa torta de chocolate con capas de ganache y un toque de avellanas. Personalizable con mensajes especiales.",
+        price: "$45.000"
     }
 
     it('muestra producto correctamente', ()=>{
         render(<Product {...mockProduct}/>)
-        expect(screen.getByText("Oso patriarcal")).toBeInTheDocument()
-        expect(screen.getByText("Un oso machista y opresor")).toBeInTheDocument()
-        expect(screen.getByText("15990")).toBeInTheDocument()
+        expect(screen.getByText("Chocotorta cuadrada de chocolate")).toBeInTheDocument()
+        expect(screen.getByText("Deliciosa torta de chocolate con capas de ganache y un toque de avellanas. Personalizable con mensajes especiales.")).toBeInTheDocument()
+        expect(screen.getByText("$45.000")).toBeInTheDocument()
     })
 
     it('se guarda en localStorage al hacer clic en guardar',()=>{
