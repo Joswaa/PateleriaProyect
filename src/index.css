@@ -495,20 +495,20 @@ select.form-control {
 footer {
   background: linear-gradient(135deg, #8B4513 0%, #6d3710 100%);
   color: #FFFFFF;
-  padding: 2rem 0 1rem;
-  margin-top: 4rem;
+  padding: 2rem 0 0.8rem;
+  margin-top: 3rem;
 }
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
   gap: 1.5rem;
   margin-bottom: 1.5rem;
+  align-items: start;
 }
 
-.footer-section h3,
-.footer-section h4 {
-  color: #FFFFFF;
+.footer-section h3 {
+  color: #FFC0CB;
   margin-bottom: 1rem;
   font-family: 'Lato', sans-serif;
   font-size: 1.1rem;
@@ -517,31 +517,183 @@ footer {
 
 .footer-section p,
 .footer-section a {
-  color: #FFFFFF;
+  color: #E8E8E8;
   text-decoration: none;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.6rem;
   display: block;
   font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-.footer-section p {
-  margin-bottom: 0.6rem;
+  line-height: 1.4;
+  transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
   color: #FFC0CB;
-  transition: all 0.3s ease;
 }
 
-.footer-bottom {
-  text-align: center;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  color: #FFC0CB;
+/* Información de contacto compacta */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.contact-icon {
+  font-size: 1rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+.contact-text {
+  flex: 1;
   font-size: 0.9rem;
 }
 
+/* Horarios compactos */
+.horarios-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.horario-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.horario-dias {
+  font-weight: 600;
+  color: #FFC0CB;
+  font-size: 0.85rem;
+}
+
+.horario-horas {
+  color: #E8E8E8;
+  font-size: 0.85rem;
+}
+
+/* Enlaces rápidos compactos */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+}
+
+/* Redes sociales compactas */
+.social-section {
+  margin-top: 1rem;
+}
+
+.social-section h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  color: #FFC0CB;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: #FFC0CB;
+  transform: translateY(-2px);
+}
+
+/* Footer bottom compacto */
+.footer-bottom {
+  text-align: center;
+  padding-top: 1.5rem;
+  color: #FFFFFF; /* ← CAMBIADO A BLANCO */
+  font-size: 0.85rem;
+}
+
+/* RESPONSIVE PARA FOOTER COMPACTO */
+@media (max-width: 992px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 1.5rem 0 0.8rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .contact-item {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .horario-item {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 1rem 0 0.6rem;
+    margin-top: 2rem;
+  }
+
+  .footer-content {
+    gap: 1.2rem;
+  }
+
+  .footer-section h3 {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .footer-section p,
+  .footer-section a {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .social-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+}
 /* UTILIDADES */
 .text-center { text-align: center; }
 .text-left { text-align: left; }
