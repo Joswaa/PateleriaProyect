@@ -15,7 +15,7 @@ export default function Home() {
       <Promociones />
       <Catalogo />
       <Registro />
-
+      <Nosotros /> 
       <Footer />
     </>
   )
