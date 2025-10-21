@@ -34,7 +34,11 @@ export default function Nosotros() {
             </div>
 
             <div className="about-image">
+<<<<<<< HEAD
+              <img src="/historia-pasteleria.PNG" alt="50 años de historia" />
+=======
               <img src="/images/IMG_5032.PNG" alt="50 años de historia" />
+>>>>>>> 1f9ae98db9a1d34dc910197cdb5231b89e1f2f06
             </div>
           </div>
         </div>
