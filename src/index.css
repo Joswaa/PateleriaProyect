@@ -1222,3 +1222,40 @@ footer {
     margin-bottom: 0.5rem;
   }
 }
+/* FILTROS DE CATÁLOGO */
+.filters {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.filter-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #FFFFFF;
+  border: 2px solid #FFC0CB;
+  color: #8B4513;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Lato', sans-serif;
+}
+
+.filter-btn:hover {
+  background-color: #FFC0CB;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 192, 203, 0.3);
+}
+
+.filter-btn.active {
+  background-color: #8B4513;
+  color: #FFFFFF;
+  border-color: #8B4513;
+}
+
+.catalog-section {
+  padding: 3rem 0;
+  background-color: #FFF9F0;
+}

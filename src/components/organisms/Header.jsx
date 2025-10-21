@@ -15,7 +15,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={scrolled ? "scrolled" : ""}>
+    <header role="banner" className={scrolled ? "scrolled" : ""}>
       <div className="container">
         <div className="flex-between flex-wrap">
           {/* Logo SIEMPRE visible (eliminamos la condición !scrolled) */}
