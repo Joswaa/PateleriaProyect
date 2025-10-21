@@ -56,16 +56,24 @@ function App() {
       {/* Main content */}
       <main>
         {/* Home Section */}
-        <Home />
+        <section id="home">
+          <Home />
+        </section>
         
         {/* Login Section */}
-        <Login />
+        <section id="login">
+          <Login />
+        </section>
         
         {/* Registro Section */}
-        <Registro />
+        <section id="registro">
+          <Registro />
+        </section>
         
         {/* Cart Section */}
-        <Cart />
+        <section id="cart">
+          <Cart />
+        </section>
       </main>
 
       {/* Footer */}

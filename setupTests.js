@@ -1,4 +1,4 @@
-// jest.setup.js
+// src/setupTests.js
 import '@testing-library/jest-dom';
 
 // Polyfill para requestSubmit (soluciona el error del formulario)
@@ -24,22 +24,10 @@ Object.defineProperty(window, 'matchMedia', {
     matches: false,
     media: query,
     onchange: null,
-    addListener: jest.fn(),
-    removeListener: jest.fn(),
+    addListener: jest.fn(), // deprecated
+    removeListener: jest.fn(), // deprecated
     addEventListener: jest.fn(),
     removeEventListener: jest.fn(),
     dispatchEvent: jest.fn(),
   })),
 });
-
-// Mock para scrollTo
-window.scrollTo = jest.fn();
-
-// Mock para localStorage
-const localStorageMock = {
-  getItem: jest.fn(),
-  setItem: jest.fn(),
-  removeItem: jest.fn(),
-  clear: jest.fn(),
-};
-global.localStorage = localStorageMock;

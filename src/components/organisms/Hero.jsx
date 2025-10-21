@@ -6,7 +6,7 @@ export default function Hero() {
       background: 'linear-gradient(135deg, #fff5ee 0%, #ffe4e1 100%)',
       padding: '4rem 0',
       textAlign: 'center',
-      backgroundImage: 'url(/images/banner.jpg)', // agregar imagen si tienes
+      backgroundImage: 'url(/images/IMG_5032.PNG)', // agregar imagen si tienes
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',

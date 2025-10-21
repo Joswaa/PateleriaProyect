@@ -1,59 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
 
-export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 50;
-      setScrolled(isScrolled);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+const Header = () => {
   return (
-    <header role="banner" className={scrolled ? "scrolled" : ""}>
+    <header>
       <div className="container">
-        <div className="flex-between flex-wrap">
-          {/* Logo SIEMPRE visible (eliminamos la condición !scrolled) */}
-          <Link to="/" className="logo-combined">
-            <img 
-              src="/images/logo.PNG" 
-              alt="Logo Pastelería 1000 Sabores" 
-              className="logo-image" 
-            />
+        <div className="flex-between">
+          <a href="#home" className="logo-combined">
+            <img src="/images/logo.PNG" alt="Logo Pastelería" className="logo-image" />
             <span className="logo">Pastelería 1000 Sabores</span>
-          </Link>
-
-          {/* Navegación */}
-          <nav role="navigation" aria-label="Menú principal">
+          </a>
+          
+          <nav>
             <ul>
-              <li>
-                <a href="#inicio" className="activo">
-                  Inicio
-                </a>
-              </li>
-              <li>
-                <a href="#catalogo">Catálogo</a>
-              </li>
-              <li>
-                <a href="#nosotros">Nosotros</a>
-              </li>
-              <li>
-                <a href="#contacto">Contacto</a>
-              </li>
+              <li><a href="#home">Inicio</a></li>
+              <li><a href="#catalogo">Catálogo</a></li>
+              <li><a href="#nosotros">Nosotros</a></li>
+              <li><a href="#contacto">Contacto</a></li>
             </ul>
           </nav>
-
-          {/* Acciones de usuario */}
-          <div className="user-actions flex">
-            <button className="btn btn-secondary" aria-label="Iniciar sesión">
-              <span className="btn-text">Iniciar sesión</span>
-            </button>
-            <button className="carrito-compacto" aria-label="Ver carrito">
+          
+          <div className="user-actions">
+            <a href="#login" className="btn btn-primary">Login</a>
+            <a href="#registro" className="btn btn-secondary">Registro</a>
+            <button className="carrito-compacto">
               🛒
               <span id="cart-count">0</span>
             </button>
@@ -62,4 +31,6 @@ export default function Header() {
       </div>
     </header>
   );
-}
+};
+
+export default Header;
