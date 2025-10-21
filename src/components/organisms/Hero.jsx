@@ -8,19 +8,30 @@ export default function Header() {
     }}>
       <div className="container">
         <div className="grid grid-2" style={{ alignItems: 'center' }}>
-          {/* Imagen temporal online */}
-          <div className="about-image">
-            <img 
-              src="https://images.unsplash.com/photo-1555507036-ab794f27d2e9?w=600&h=400&fit=crop" 
-              alt="Pasteles deliciosos" 
-              style={{ 
-                width: '100%', 
-                height: '300px',
-                objectFit: 'cover',
-                borderRadius: '12px',
-                boxShadow: '0 8px 30px rgba(139, 69, 19, 0.2)'
-              }}
-            />
+          {/* Imagen cuadrada con contenedor */}
+          <div className="about-image" style={{ position: 'relative' }}>
+            <div style={{
+              width: '100%',
+              height: '0',
+              paddingBottom: '100%', // Hace el contenedor cuadrado
+              position: 'relative',
+              borderRadius: '12px',
+              overflow: 'hidden',
+              boxShadow: '0 8px 30px rgba(139, 69, 19, 0.2)'
+            }}>
+              <img 
+                src="/images/IMG_5033.PNG" 
+                alt="Pasteles deliciosos" 
+                style={{ 
+                  position: 'absolute',
+                  top: '0',
+                  left: '0',
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover' // Asegura que cubra todo el espacio
+                }}
+              />
+            </div>
             <div className="about-badge">
               <div className="badge-number">50</div>
               <div className="badge-text">Años</div>
