@@ -15,7 +15,11 @@ export default function Home() {
       <Promociones />
       <Catalogo />
       <Registro />
+<<<<<<< HEAD
       <Nosotros />
+=======
+      <Nosotros /> 
+>>>>>>> 1f9ae98db9a1d34dc910197cdb5231b89e1f2f06
       <Footer />
     </>
   )

@@ -2,7 +2,7 @@
 export default function Logo({ alt = "Logo", size = 48 }) {
   return (
     <img
-      src="/public/images/logo.PNG"  // Cámbialo por la ruta de tu logo real
+      src="/public/images/logo.PNG"  // Ruta del logo
       alt={alt}
       width={size}
       height={size}

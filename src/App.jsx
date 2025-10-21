@@ -1,7 +1,5 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import './App.css'
-import Home from './components/pages/Home'
-import Cart from './components/pages/Cart'
+import Registro from './components/pages/Registro';
+import Login from './components/pages/Login';
 
 function App() {
   return (
@@ -9,9 +7,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/registro' element={<Registro />} />  {/* Agrega esta ruta */}
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
-
-export default App

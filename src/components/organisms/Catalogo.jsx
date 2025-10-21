@@ -25,7 +25,7 @@ export default function Catalogo() {
         {/* Grid de productos */}
         <div className="products-grid grid grid-3" id="productos-container">
           <article className="producto-card" data-category="tortas-cuadradas" data-product="TC001">
-            <img src="tortarica.jpg" alt="Torta Cuadrada de Chocolate" className="producto-imagen"
+            <img src="/images/tortarica.jpg" alt="Torta Cuadrada de Chocolate" className="producto-imagen"
               loading="lazy" />
             <div className="producto-contenido">
               <span className="producto-categoria">Tortas Cuadradas</span>
@@ -41,7 +41,7 @@ export default function Catalogo() {
           </article>
 
           <article className="producto-card" data-category="tortas-circulares" data-product="TT001">
-            <img src="Vainilla.jpg" alt="Torta Circular de Vainilla" className="producto-imagen"
+            <img src="/images/Vainilla.jpg" alt="Torta Circular de Vainilla" className="producto-imagen"
               loading="lazy" />
             <div className="producto-contenido">
               <span className="producto-categoria">Tortas Circulares</span>
@@ -57,7 +57,7 @@ export default function Catalogo() {
           </article>
 
           <article className="producto-card" data-category="postres-individuales" data-product="PI001">
-            <img src="mousse.jpg" alt="Mousse de Chocolate" className="producto-imagen" loading="lazy" />
+            <img src="/images/mousse.jpg" alt="Mousse de Chocolate" className="producto-imagen" loading="lazy" />
             <div className="producto-contenido">
               <span className="producto-categoria">Postres Individuales</span>
               <h3 className="producto-titulo">Mousse de Chocolate</h3>
@@ -72,7 +72,7 @@ export default function Catalogo() {
           </article>
 
           <article className="producto-card" data-category="sin-azucar" data-product="PSA001">
-            <img src="torta-naranja-sin-azucar.jpg" alt="Torta Sin Azúcar de Naranja"
+            <img src="/images/Naranja1.jpg" alt="Torta Sin Azúcar de Naranja"
               className="producto-imagen" loading="lazy" />
             <div className="producto-contenido">
               <span className="producto-categoria">Sin Azúcar</span>
@@ -88,7 +88,7 @@ export default function Catalogo() {
           </article>
 
           <article className="producto-card" data-category="sin-gluten" data-product="PG001">
-            <img src="brownie-sin-gluten.jpg" alt="Brownie Sin Gluten" className="producto-imagen"
+            <img src="/images/Brownie.jpg" alt="Brownie Sin Gluten" className="producto-imagen"
               loading="lazy" />
             <div className="producto-contenido">
               <span className="producto-categoria">Sin Gluten</span>
@@ -104,7 +104,7 @@ export default function Catalogo() {
           </article>
 
           <article className="producto-card" data-category="vegana" data-product="PV001">
-            <img src="torta-vegana-chocolate.jpg" alt="Torta Vegana de Chocolate"
+            <img src="/images/Vegana.jpg" alt="Torta Vegana de Chocolate"
               className="producto-imagen" loading="lazy" />
             <div className="producto-contenido">
               <span className="producto-categoria">Vegana</span>
