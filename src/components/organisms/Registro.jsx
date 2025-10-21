@@ -1,113 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react'
 
 export default function Registro() {
-  const [formData, setFormData] = useState({
-    nombre: '',
-    email: '',
-    fechaNacimiento: '',
-    password: '',
-    confirmPassword: '',
-    codigoPromocional: '',
-    terminos: false,
-  });
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: type === 'checkbox' ? checked : value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Registrando usuario:', formData);
-    // Aquí va tu lógica de envío y validación
-  };
-
   return (
-    <form className="form-container" onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label className="form-label">Nombre completo</label>
-        <input
-          type="text"
-          name="nombre"
-          value={formData.nombre}
-          onChange={handleChange}
-          className="form-control"
-          placeholder="Nombre completo"
-          required
-        />
+    <section id="registro" style={{ padding: '4rem 0', background: '#FFF9F0' }}>
+      <div className="container">
+        <div style={{ maxWidth: '500px', margin: '0 auto', background: 'white', padding: '2rem', borderRadius: '12px', boxShadow: '0 4px 20px rgba(139, 69, 19, 0.1)' }}>
+          <h2 style={{ color: '#8B4513', textAlign: 'center', marginBottom: '2rem' }}>Crear Cuenta</h2>
+          <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <div className="form-group">
+              <label className="form-label">Nombre completo</label>
+              <input type="text" className="form-control" placeholder="Ingresa tu nombre completo" />
+            </div>
+            <div className="form-group">
+              <label className="form-label">Email</label>
+              <input type="email" className="form-control" placeholder="tu@email.com" />
+            </div>
+            <div className="form-group">
+              <label className="form-label">Contraseña</label>
+              <input type="password" className="form-control" placeholder="Mínimo 8 caracteres" />
+            </div>
+            <div className="form-group">
+              <label className="form-label">Confirmar contraseña</label>
+              <input type="password" className="form-control" placeholder="Repite tu contraseña" />
+            </div>
+            <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>
+              Registrarse
+            </button>
+            <p style={{ textAlign: 'center', color: '#5D4037', margin: 0 }}>
+              ¿Ya tienes cuenta? <a href="#login" style={{ color: '#8B4513', fontWeight: '600' }}>Inicia sesión aquí</a>
+            </p>
+          </form>
+        </div>
       </div>
-      <div className="form-group">
-        <label className="form-label">Correo electrónico</label>
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          className="form-control"
-          placeholder="Correo electrónico"
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label className="form-label">Fecha de nacimiento</label>
-        <input
-          type="date"
-          name="fechaNacimiento"
-          value={formData.fechaNacimiento}
-          onChange={handleChange}
-          className="form-control"
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label className="form-label">Contraseña</label>
-        <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          className="form-control"
-          placeholder="Contraseña"
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label className="form-label">Confirmar contraseña</label>
-        <input
-          type="password"
-          name="confirmPassword"
-          value={formData.confirmPassword}
-          onChange={handleChange}
-          className="form-control"
-          placeholder="Confirmar contraseña"
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label className="form-label">Código promocional (opcional)</label>
-        <input
-          type="text"
-          name="codigoPromocional"
-          value={formData.codigoPromocional}
-          onChange={handleChange}
-          className="form-control"
-          placeholder="Código promocional"
-        />
-      </div>
-      <div className="form-group" style={{display: "flex", alignItems: "center"}}>
-        <input
-          type="checkbox"
-          name="terminos"
-          checked={formData.terminos}
-          onChange={handleChange}
-          required
-        />
-        <span style={{marginLeft: "8px"}}>Acepto los términos y condiciones</span>
-      </div>
-      <button type="submit" className="btn btn-primary">Registrarse</button>
-    </form>
-  );
+    </section>
+  )
 }
