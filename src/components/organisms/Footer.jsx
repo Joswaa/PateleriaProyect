@@ -5,14 +5,13 @@ export default function Footer() {
     <footer>
       <div className="container">
         <div className="footer-content">
-          {/* Información de la empresa - SIN REDES SOCIALES */}
+
           <div className="footer-section">
             <h3>Pastelería 1000 Sabores</h3>
             <p>50 años endulzando Chile con tradición y calidad.</p>
-            {/* ELIMINAMOS COMPLETAMENTE LA SECCIÓN DE REDES SOCIALES */}
+
           </div>
 
-          {/* Contacto */}
           <div className="footer-section">
             <h3>Contacto</h3>
             <div className="contact-info">
@@ -37,7 +36,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Horarios */}
+
           <div className="footer-section">
             <h3>Horarios</h3>
             <div className="horarios-list">
@@ -56,7 +55,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Enlaces rápidos */}
           <div className="footer-section">
             <h3>Enlaces</h3>
             <div className="footer-links">
