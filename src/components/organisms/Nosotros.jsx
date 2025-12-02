@@ -36,7 +36,6 @@ export default function Nosotros() {
             <div className="about-image">
 
               <img src="/images/IMG_5033.PNG" alt="50 años de historia" />
-6
             </div>
           </div>
         </div>

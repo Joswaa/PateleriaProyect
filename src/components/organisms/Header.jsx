@@ -1,30 +1,36 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useCart } from '../../context/CartContext'; // ajusta ruta si es otra
 
 const Header = () => {
+  const navigate = useNavigate();
+  const { items } = useCart();
+  const cartCount = items.reduce((sum, p) => sum + p.quantity, 0);
+
   return (
     <header>
       <div className="container">
         <div className="flex-between">
-          <a href="#home" className="logo-combined">
+          <Link to="/" className="logo-combined">
             <img src="/images/logo.PNG" alt="Logo Pastelería" className="logo-image" />
             <span className="logo">Pastelería 1000 Sabores</span>
-          </a>
-          
+          </Link>
+
           <nav>
             <ul>
-              <li><a href="#home">Inicio</a></li>
-              <li><a href="#catalogo">Catálogo</a></li>
-              <li><a href="#nosotros">Nosotros</a></li>
-              <li><a href="#contacto">Contacto</a></li>
+              <li><Link to="/">Inicio</Link></li>
+              <li><Link to="/catalogo">Catálogo</Link></li>
+              <li><Link to="/nosotros">Nosotros</Link></li>
+              <li><Link to="/contacto">Contacto</Link></li>
             </ul>
           </nav>
-          
+
           <div className="user-actions">
-            <a href="#login" className="btn btn-primary">Login</a>
-            <a href="#registro" className="btn btn-secondary">Registro</a>
-            <button className="carrito-compacto">
+            <Link to="/login" className="btn btn-primary">Login</Link>
+            <Link to="/registro" className="btn btn-secondary">Registro</Link>
+            <button className="carrito-compacto" onClick={() => navigate('/cart')}>
               🛒
-              <span id="cart-count">0</span>
+              <span id="cart-count">{cartCount}</span>
             </button>
           </div>
         </div>
