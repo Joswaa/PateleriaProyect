@@ -1,8 +1,20 @@
 import React from 'react';
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext'; // NUEVO
 
 export default function PrivateRoute() {
-  const token = localStorage.getItem('token');
-  // Si hay token, deja pasar; si no, manda a /login
-  return token ? <Outlet /> : <Navigate to="/login" replace />;
+  const { token } = useAuth(); // NUEVO: usa el contexto en vez de localStorage directo
+  const location = useLocation();
+
+  if (!token) {
+    return (
+      <Navigate
+        to="/login"
+        replace
+        state={{ from: location }}
+      />
+    );
+  }
+
+  return <Outlet />;
 }

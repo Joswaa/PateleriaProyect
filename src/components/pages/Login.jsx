@@ -1,17 +1,26 @@
 import React, { useState } from 'react';
-import { loginRequest } from '../../services/api'; // ajusta la ruta si es distinto
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext'; // NUEVO
+import { loginRequest } from '../../services/api';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const { login } = useAuth(); // NUEVO
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || '/';
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      await loginRequest(email, password);
-      window.location.href = '/catalogo'; // o la ruta que uses
+      const data = await loginRequest(email, password);
+      login(data.token); // NUEVO: actualiza el contexto
+      navigate(from, { replace: true });
     } catch (err) {
       alert(err.message);
     } finally {
