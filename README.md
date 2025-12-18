@@ -1,16 +1,76 @@
-# React + Vite
+# Pastelería 1000 Sabores - Frontend Web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend web desarrollado con **React** para la pastelería **1000 Sabores**.  
+La aplicación consume la API REST en **Spring Boot** (desplegada en AWS EC2 o local) para mostrar el catálogo de productos, manejar el carrito de compras y realizar el inicio de sesión con autenticación basada en token.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologías utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 18
+- React Router DOM
+- JavaScript (ES6+)
+- HTML5 semántico
+- CSS3 (Flexbox, Grid, diseño responsivo)
+- Context API (carrito de compras, autenticación)
+- Fetch API para consumo de la API REST del backend
 
-## React Compiler
+## ✨ Funcionalidades principales
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Landing page con información de la pastelería y secciones de promociones.
+- Catálogo de productos consumido desde el backend (`/productos`) con filtros por categoría.
+- Carrito de compras con manejo de cantidades y total.
+- Formulario de **login** integrado con la API (`/auth/login`) y almacenamiento de token en `localStorage`.
+- Rutas protegidas (`/catalogo`, `/cart`) mediante `PrivateRoute`, accesibles solo para usuarios autenticados.
+- Diseño responsivo para escritorio y dispositivos móviles.
 
-## Expanding the ESLint configuration
+## 🧩 Estructura del proyecto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+src/
+├─ components/
+│ ├─ pages/
+│ │ ├─ Home.jsx
+│ │ ├─ Login.jsx
+│ │ ├─ Registro.jsx
+│ │ └─ Cart.jsx
+│ ├─ organisms/
+│ │ ├─ Catalogo.jsx
+│ │ └─ Footer.jsx
+│ └─ PrivateRoute.jsx
+├─ context/
+│ ├─ AuthContext.jsx
+│ └─ CartContext.jsx
+├─ services/
+│ └─ api.js # loginRequest, getProducts, etc.
+├─ App.jsx
+└─ main.jsx
+
+
+## 🔗 Integración con el backend
+
+Este frontend consume la **Pastelería API** desarrollada con Spring Boot:
+
+- `POST /auth/login` → autenticación de usuario y obtención de token (JWT).
+- `GET /productos` → listado de productos para el catálogo.
+- Otros endpoints CRUD según la implementación del backend.
+
+En `src/services/api.js` se definen las funciones que llaman a estos endpoints y envían el token en el header `Authorization` cuando es necesario.
+
+## ▶️ Ejecución del proyecto
+Instalar dependencias
+npm install
+
+Levantar en modo desarrollo
+npm run dev # Vite (ajustar si se usa otro template)
+
+Abrir en el navegador
+http://localhost:5173 # o el puerto configurado en tu entorno
+
+
+> Nota: Es necesario tener el backend levantado (por ejemplo, en `http://localhost:9090`) para que el login y el catálogo funcionen correctamente.
+
+## 📚 Contexto académico
+
+Proyecto académico desarrollado como parte de las asignaturas de **Desarrollo de Aplicaciones Web** y **Desarrollo de Aplicaciones Móviles**, integrando:
+
+- Frontend web en React.
+- Backend REST en Spring Boot.
+- Consumo de API desde cliente web y móvil.
